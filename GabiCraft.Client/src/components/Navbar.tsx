@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/project", label: "Project" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Начало" },
+  { href: "/project", label: "Галерия" },
+  { href: "/about", label: "За автора" },
+  { href: "/contact", label: "Контакти" },
 ];
 
 export default function Navbar() {
@@ -19,11 +19,11 @@ export default function Navbar() {
     <header className="site-header">
       <div className="nav-shell">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand-mark">GC</span>
+          <span className="brand-mark" aria-hidden="true">✦</span>
           <span>GabiCraft</span>
         </Link>
 
-        <nav className="desktop-nav" aria-label="Main navigation">
+        <nav className="desktop-nav" aria-label="Основна навигация">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -39,14 +39,14 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
           >
-            Portfolio
+            Изработка ↗
           </a>
         </nav>
 
         <button
           type="button"
           className="menu-button"
-          aria-label="Open menu"
+          aria-label="Отвори меню"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
@@ -56,7 +56,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
+        <nav className="mobile-nav" aria-label="Мобилна навигация">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -73,7 +73,7 @@ export default function Navbar() {
             rel="noreferrer"
             onClick={() => setOpen(false)}
           >
-            Portfolio ↗
+            Изработка ↗
           </a>
         </nav>
       )}
