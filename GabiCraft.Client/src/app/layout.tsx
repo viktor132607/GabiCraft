@@ -4,13 +4,13 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GabiCraft",
-  description: "GabiCraft — Next.js frontend connected to an ASP.NET Core Web API.",
+  title: "GabiCraft | Art Portfolio",
+  description: "GabiCraft — арт портфолио за картини и авторски творби.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="bg">
       <body>
         <Navbar />
         <main className="page-shell">{children}</main>
