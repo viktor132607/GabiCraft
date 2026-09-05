@@ -2,15 +2,16 @@ export default function AboutPage() {
   return (
     <section className="section page-hero">
       <div className="container narrow">
-        <span className="eyebrow">About</span>
+        <span className="eyebrow">За автора</span>
         <h1>GabiCraft</h1>
         <p className="hero-copy">
-          GabiCraft is currently a clean technical foundation: enough structure to build on, without prematurely locking the project into a heavy interface or complex domain model.
+          Арт портфолио, създадено да поставя картините на първо място — с топла цветова палитра, въздух между елементите и усещане за ръчна, лична работа.
         </p>
+
         <div className="info-list">
-          <div><strong>Interface</strong><span>Minimal visual language, clear hierarchy and responsive navigation.</span></div>
-          <div><strong>Architecture</strong><span>Separate Next.js client and ASP.NET Core API with PostgreSQL persistence.</span></div>
-          <div><strong>Next steps</strong><span>Ready for real product features, authentication, administration and domain-specific workflows.</span></div>
+          <div><strong>Стил</strong><span>Топли земни цветове, слънчогледови акценти и естествена, спокойна композиция.</span></div>
+          <div><strong>Фокус</strong><span>Оригинални картини, серии и отделни творби, представени без визуален шум.</span></div>
+          <div><strong>Галерия</strong><span>Текущите плейсхолдъри са подготвени за директна замяна с реални изображения на картините.</span></div>
         </div>
       </div>
     </section>
