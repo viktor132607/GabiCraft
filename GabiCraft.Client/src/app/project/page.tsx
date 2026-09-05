@@ -1,16 +1,34 @@
+const works = [
+  { title: "Картина 01", className: "art-one" },
+  { title: "Картина 02", className: "art-two" },
+  { title: "Картина 03", className: "art-three" },
+  { title: "Картина 04", className: "art-four" },
+  { title: "Картина 05", className: "art-five" },
+  { title: "Картина 06", className: "art-six" },
+];
+
 export default function ProjectPage() {
   return (
     <section className="section page-hero">
       <div className="container">
         <div className="section-heading">
-          <span className="eyebrow">Technical structure</span>
-          <h1>Project</h1>
-          <p>A lightweight but real full-stack setup prepared for continued development.</p>
+          <span className="eyebrow">Галерия</span>
+          <h1>Избрани творби</h1>
+          <p>Плейсхолдъри за картините с различни композиции и пропорции, готови за замяна с реални изображения.</p>
         </div>
-        <div className="card-grid">
-          <article className="card"><span>Frontend</span><h3>Next.js</h3><p>App Router, TypeScript, reusable UI components and Axios API access.</p></article>
-          <article className="card"><span>Backend</span><h3>ASP.NET Core</h3><p>.NET 10 Web API with separate Domain and Data projects.</p></article>
-          <article className="card"><span>Database</span><h3>PostgreSQL</h3><p>Entity Framework Core, Npgsql and Docker Compose for local development.</p></article>
+
+        <div className="art-grid gallery-full">
+          {works.map((work, index) => (
+            <article className="art-card" key={work.title}>
+              <div className={`art-placeholder ${work.className}`} aria-label={`Плейсхолдър ${work.title}`}>
+                <span className="art-number">0{index + 1}</span>
+              </div>
+              <div className="art-meta">
+                <h3>{work.title}</h3>
+                <span>Авторска творба · плейсхолдър</span>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
