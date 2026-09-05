@@ -7,25 +7,25 @@ export default function Footer() {
         <div>
           <div className="footer-brand">GabiCraft</div>
           <p className="footer-copy">
-            A clean full-stack foundation for the next stage of the project.
+            Арт портфолио с топла слънчогледова палитра, чиста композиция и място за оригинални картини.
           </p>
         </div>
 
         <div>
-          <div className="footer-title">Navigation</div>
+          <div className="footer-title">Навигация</div>
           <div className="footer-links">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/project">Project</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/">Начало</Link>
+            <Link href="/project">Галерия</Link>
+            <Link href="/about">За автора</Link>
+            <Link href="/contact">Контакти</Link>
           </div>
         </div>
 
         <div>
-          <div className="footer-title">Links</div>
+          <div className="footer-title">Връзки</div>
           <div className="footer-links">
             <a href="https://viktor-iliev.site/portfolio/" target="_blank" rel="noreferrer">
-              Viktor Iliev — Portfolio ↗
+              Изработка: Viktor Iliev ↗
             </a>
             <a href="https://github.com/viktor132607/GabiCraft" target="_blank" rel="noreferrer">
               GitHub ↗
