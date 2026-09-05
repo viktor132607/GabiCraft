@@ -1,0 +1,11 @@
+{
+  "name": "gabicraft-render-root",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "npm --prefix GabiCraft.Client install && npm --prefix GabiCraft.Client run build && rm -rf out && cp -r GabiCraft.Client/out out"
+  }
+}
