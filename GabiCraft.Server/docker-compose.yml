@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: gabicraft-postgres
+    environment:
+      POSTGRES_DB: gabicraft
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - gabicraft-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  gabicraft-postgres-data:
