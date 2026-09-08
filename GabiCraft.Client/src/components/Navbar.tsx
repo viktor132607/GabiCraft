@@ -33,9 +33,6 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <a className="rounded-full border border-[#d9cfbf] bg-white px-4 py-2 text-sm font-semibold text-[#615b51] transition-colors hover:border-[#c3aa78] hover:text-[#7e5b1e]" href="https://viktor-iliev.site/portfolio/" target="_blank" rel="noreferrer">
-            Изработка ↗
-          </a>
         </nav>
 
         <button
@@ -62,9 +59,6 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <a href="https://viktor-iliev.site/portfolio/" target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="py-3 text-sm font-semibold text-[#8b641f]">
-            Изработка ↗
-          </a>
         </nav>
       )}
     </header>
