@@ -77,6 +77,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-t border-[#e8decd] bg-[#fffaf0] py-[82px] max-[820px]:py-[64px] max-[620px]:py-[50px]">
+        <div className="mx-auto grid w-[min(1180px,calc(100%_-_40px))] grid-cols-[0.9fr_1.1fr] gap-16 max-[820px]:grid-cols-1 max-[820px]:gap-7 max-[620px]:w-[min(1180px,calc(100%_-_28px))]">
+          <div>
+            <span className="mb-[18px] inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-[#8a6a25]">Дизайн услуги</span>
+            <h2 className="font-serif text-[clamp(36px,4.4vw,56px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Дизайн и визуална концепция</h2>
+          </div>
+          <div>
+            <p className="text-[17px] leading-[1.7] text-[#756d61] max-[620px]:text-base">
+              Изграждане на цялостна визуална посока за брандове и дигитални проекти – идентичност на бранда, визия и структура на уебсайт, цветова система, типография и последователен стил във всички основни елементи.
+            </p>
+            <Link className="mt-4 inline-block border-b border-[#b58935] pb-1 font-semibold text-[#765920]" href="/contact">Запитване →</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-[#e8decd] bg-[#f7f0e4] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
         <div className="mx-auto grid w-[min(1180px,calc(100%_-_40px))] grid-cols-2 gap-16 max-[820px]:grid-cols-1 max-[820px]:gap-7 max-[620px]:w-[min(1180px,calc(100%_-_28px))]">
           <div>
