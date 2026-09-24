@@ -28,6 +28,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              aria-current={pathname === item.href ? "page" : undefined}
               className={`border-b py-[27px] text-sm font-semibold transition-colors ${pathname === item.href ? "border-[#b88121] text-[#7e5b1e]" : "border-transparent text-[#70685c] hover:text-[#2d2a22]"}`}
             >
               {item.label}
@@ -53,6 +54,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              aria-current={pathname === item.href ? "page" : undefined}
               onClick={() => setOpen(false)}
               className={`border-b border-[#eee6d9] py-3 text-sm font-semibold ${pathname === item.href ? "text-[#8b641f]" : "text-[#645f56]"}`}
             >
