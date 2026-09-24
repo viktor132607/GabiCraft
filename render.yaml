@@ -6,17 +6,3 @@ services:
     buildCommand: npm install --no-audit --no-fund && npm run build
     staticPublishPath: ./out
     autoDeployTrigger: checksPass
-
-  - type: web
-    name: GabiCraft.Server
-    runtime: docker
-    rootDir: GabiCraft.Server
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    plan: free
-    region: frankfurt
-    healthCheckPath: /api/health
-    autoDeployTrigger: checksPass
-    envVars:
-      - key: ConnectionStrings__DefaultConnection
-        sync: false
