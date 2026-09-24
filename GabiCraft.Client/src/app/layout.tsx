@@ -1,9 +1,31 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gabicraft.onrender.com";
+
+const globalStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "GabiCraft",
+      inLanguage: "bg-BG",
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      url: siteUrl,
+      name: "GabiCraft",
+      description:
+        "Арт портфолио за авторски картини и услуги за бранд идентичност, уеб визия и визуална концепция.",
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -65,6 +87,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="bg">
       <body className="m-0 min-h-screen overflow-x-hidden bg-[#fffdf7] font-sans text-[#28231d] antialiased">
+        <StructuredData data={globalStructuredData} />
         <Navbar />
         <main className="min-h-[calc(100vh-320px)]">{children}</main>
         <Footer />
