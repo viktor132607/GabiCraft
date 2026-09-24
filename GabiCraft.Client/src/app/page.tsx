@@ -49,15 +49,18 @@ export const metadata: Metadata = {
 };
 const works = [
   {
-    title: "Творба 01",
+    title: "Авторска живопис",
+    description: "Картини с топла палитра и фокус върху светлина, цвят и лично присъствие.",
     art: "bg-[linear-gradient(145deg,#f4d365_0%,#f0ad3a_45%,#6f7b43_100%)]",
   },
   {
-    title: "Творба 02",
+    title: "Цветови композиции",
+    description: "Композиции, изградени около охра, жълто, маслинено зелено и естествени преходи.",
     art: "bg-[linear-gradient(155deg,#f7ead0_0%,#c98b48_48%,#6c5539_100%)]",
   },
   {
-    title: "Творба 03",
+    title: "Авторски серии",
+    description: "Свързани визуални идеи, развивани в отделни творби и последователни серии.",
     art: "bg-[linear-gradient(135deg,#8a924c_0%,#d9ba48_46%,#f5e5a5_100%)]",
   },
 ];
@@ -125,7 +128,7 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <h3 className="mb-1 font-serif text-[24px] font-semibold text-[#302b23]">{work.title}</h3>
-                  <span className="text-sm text-[#8a8174]">Авторска творба</span>
+                  <p className="text-sm leading-6 text-[#8a8174]">{work.description}</p>
                 </div>
               </article>
             ))}
@@ -152,7 +155,7 @@ export default function Home() {
               <article key={item.title} className="overflow-hidden rounded-[22px] border border-[#e1d5c4] bg-white shadow-[0_14px_35px_rgba(74,58,31,0.06)]">
                 <div aria-hidden="true" className={`relative aspect-[16/11] overflow-hidden ${item.art}`}>
                   <div className="absolute inset-5 rounded-[14px] border border-white/55 bg-white/10" />
-                  <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6f624d]">Проект 0{index + 1}</span>
+                  <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6f624d]">Дизайн направление</span>
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
                 <div className="p-5">
