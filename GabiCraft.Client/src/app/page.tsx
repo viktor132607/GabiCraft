@@ -100,12 +100,12 @@ export default function Home() {
             </div>
           </div>
           <div className="relative z-10 mx-auto w-full max-w-[520px]">
-            <div role="img" aria-label="Избрана авторска картина в топла жълто-зелена палитра" className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-[#e2d3b7] bg-[#f4d25d]">
+            <div role="img" aria-label="Декоративна арт композиция в топла жълто-зелена палитра" className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-[#e2d3b7] bg-[#f4d25d]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_42%,#5d4325_0_10%,#8b682d_10%_18%,#e7b936_18%_36%,transparent_36%),radial-gradient(ellipse_at_56%_52%,rgba(101,118,57,.92)_0_10%,transparent_11%),linear-gradient(145deg,#fff3c4_0%,#edc24e_48%,#7d8949_100%)]" />
               <div className="absolute left-[8%] top-[14%] h-[70%] w-[84%] rounded-[50%] border border-white/40" />
               <div className="absolute bottom-0 left-0 right-0 bg-white/88 px-6 py-5 backdrop-blur-sm">
-                <span className="block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9b7b31]">Избрана творба</span>
-                <strong className="mt-1 block font-serif text-xl font-semibold text-[#302b23]">Авторска картина</strong>
+                <span className="block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9b7b31]">Визуална посока</span>
+                <strong className="mt-1 block font-serif text-xl font-semibold text-[#302b23]">Топла арт композиция</strong>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
-            {designConcepts.map((item, index) => (
+            {designConcepts.map((item) => (
               <article key={item.title} className="overflow-hidden rounded-[22px] border border-[#e1d5c4] bg-white shadow-[0_14px_35px_rgba(74,58,31,0.06)]">
                 <div aria-hidden="true" className={`relative aspect-[16/11] overflow-hidden ${item.art}`}>
                   <div className="absolute inset-5 rounded-[14px] border border-white/55 bg-white/10" />
