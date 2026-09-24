@@ -97,7 +97,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative z-10 mx-auto w-full max-w-[520px]">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-[#e2d3b7] bg-[#f4d25d]">
+            <div role="img" aria-label="Избрана авторска картина в топла жълто-зелена палитра" className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-[#e2d3b7] bg-[#f4d25d]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_42%,#5d4325_0_10%,#8b682d_10%_18%,#e7b936_18%_36%,transparent_36%),radial-gradient(ellipse_at_56%_52%,rgba(101,118,57,.92)_0_10%,transparent_11%),linear-gradient(145deg,#fff3c4_0%,#edc24e_48%,#7d8949_100%)]" />
               <div className="absolute left-[8%] top-[14%] h-[70%] w-[84%] rounded-[50%] border border-white/40" />
               <div className="absolute bottom-0 left-0 right-0 bg-white/88 px-6 py-5 backdrop-blur-sm">
@@ -109,17 +109,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#fffdf7] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
+      <section aria-labelledby="gallery-heading" className="bg-[#fffdf7] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
         <div className="mx-auto w-[min(1180px,calc(100%_-_40px))] max-[620px]:w-[min(1180px,calc(100%_-_28px))]">
           <div className="mb-10 max-w-[760px]">
             <span className="mb-[18px] inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-[#8a6a25]">Избрани творби</span>
-            <h2 className="mb-[18px] font-serif text-[clamp(38px,4.6vw,60px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Галерия</h2>
+            <h2 id="gallery-heading" className="mb-[18px] font-serif text-[clamp(38px,4.6vw,60px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Галерия</h2>
             <p className="text-[17px] leading-[1.7] text-[#756d61] max-[620px]:text-base">Подбрана селекция от авторски творби, представени с фокус върху цвят, композиция и характер.</p>
           </div>
           <div className="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
             {works.map((work, index) => (
               <article key={work.title} className="group">
-                <div className={`relative aspect-[4/5] overflow-hidden rounded-[18px] border border-[#e1d5c4] ${work.art}`} aria-label={work.title}>
+                <div role="img" aria-label={`${work.title} — авторска творба`} className={`relative aspect-[4/5] overflow-hidden rounded-[18px] border border-[#e1d5c4] ${work.art}`}>
                   <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[11px] font-bold tracking-[0.12em] text-[#6c604c]">0{index + 1}</span>
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
@@ -134,12 +134,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-[#e8decd] bg-[#fffaf0] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
+      <section aria-labelledby="design-heading" className="border-t border-[#e8decd] bg-[#fffaf0] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
         <div className="mx-auto w-[min(1180px,calc(100%_-_40px))] max-[620px]:w-[min(1180px,calc(100%_-_28px))]">
           <div className="mb-10 grid grid-cols-[0.9fr_1.1fr] gap-16 max-[820px]:grid-cols-1 max-[820px]:gap-5">
             <div>
               <span className="mb-[18px] inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-[#8a6a25]">Дизайн услуги</span>
-              <h2 className="font-serif text-[clamp(36px,4.4vw,56px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Дизайн и визуална концепция</h2>
+              <h2 id="design-heading" className="font-serif text-[clamp(36px,4.4vw,56px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Дизайн и визуална концепция</h2>
             </div>
             <div>
               <p className="text-[17px] leading-[1.7] text-[#756d61] max-[620px]:text-base">Изграждане на цялостна визуална посока за брандове и дигитални проекти – идентичност на бранда, визия и структура на уебсайт, цветова система, типография и последователен стил във всички основни елементи.</p>
@@ -150,7 +150,7 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
             {designConcepts.map((item, index) => (
               <article key={item.title} className="overflow-hidden rounded-[22px] border border-[#e1d5c4] bg-white shadow-[0_14px_35px_rgba(74,58,31,0.06)]">
-                <div className={`relative aspect-[16/11] overflow-hidden ${item.art}`}>
+                <div aria-hidden="true" className={`relative aspect-[16/11] overflow-hidden ${item.art}`}>
                   <div className="absolute inset-5 rounded-[14px] border border-white/55 bg-white/10" />
                   <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6f624d]">Проект 0{index + 1}</span>
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/20 to-transparent" />
@@ -166,11 +166,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-[#e8decd] bg-[#f7f0e4] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
+      <section aria-labelledby="identity-heading" className="border-t border-[#e8decd] bg-[#f7f0e4] py-[92px] max-[820px]:py-[68px] max-[620px]:py-[54px]">
         <div className="mx-auto grid w-[min(1180px,calc(100%_-_40px))] grid-cols-2 gap-16 max-[820px]:grid-cols-1 max-[820px]:gap-7 max-[620px]:w-[min(1180px,calc(100%_-_28px))]">
           <div>
             <span className="mb-[18px] inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-[#8a6a25]">GabiCraft</span>
-            <h2 className="font-serif text-[clamp(38px,4.6vw,60px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Топло, лично, естествено</h2>
+            <h2 id="identity-heading" className="font-serif text-[clamp(38px,4.6vw,60px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Топло, лично, естествено</h2>
           </div>
           <div>
             <p className="text-[17px] leading-[1.7] text-[#756d61] max-[620px]:text-base">Визията използва слънчогледово жълто, охра, маслинено зелено и кремав фон. Декоративните елементи остават фини, за да не отнемат вниманието от самите картини.</p>
