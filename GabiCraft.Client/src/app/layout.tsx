@@ -43,12 +43,21 @@ export const metadata: Metadata = {
     title: "GabiCraft | Арт портфолио и дизайн услуги",
     description:
       "Авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GabiCraft — арт портфолио и дизайн услуги",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "GabiCraft | Арт портфолио и дизайн услуги",
     description:
       "Авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+    images: ["/og-image.png"],
   },
 };
 
