@@ -15,6 +15,13 @@ const globalStructuredData = {
       url: siteUrl,
       name: "GabiCraft",
       inLanguage: "bg-BG",
+      image: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        caption: "GabiCraft — арт портфолио и дизайн услуги",
+      },
     },
     {
       "@type": "Organization",
@@ -23,6 +30,13 @@ const globalStructuredData = {
       name: "GabiCraft",
       description:
         "Арт портфолио за авторски картини и услуги за бранд идентичност, уеб визия и визуална концепция.",
+      image: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        caption: "GabiCraft — арт портфолио и дизайн услуги",
+      },
     },
   ],
 };
