@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+
+export const metadata: Metadata = {
+  title: "Авторски картини и дизайн услуги",
+  description: "GabiCraft представя авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+  alternates: {
+    canonical: "/",
+  },
+};
 const works = [
   {
     title: "Картина 01",
