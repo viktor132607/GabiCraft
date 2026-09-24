@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import StructuredData from "@/components/StructuredData";
 
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gabicraft.onrender.com";
+
+const serviceStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Дизайн и визуална концепция",
+  url: siteUrl,
+  provider: {
+    "@id": `${siteUrl}/#organization`,
+  },
+  serviceType: ["Бранд идентичност", "Уеб визия", "Визуална система"],
+  description:
+    "Изграждане на визуална посока за брандове и дигитални проекти – идентичност, уеб визия, цветова система и типография.",
+};
 
 export const metadata: Metadata = {
   title: "Авторски картини и дизайн услуги",
@@ -33,15 +49,15 @@ export const metadata: Metadata = {
 };
 const works = [
   {
-    title: "Картина 01",
+    title: "Творба 01",
     art: "bg-[linear-gradient(145deg,#f4d365_0%,#f0ad3a_45%,#6f7b43_100%)]",
   },
   {
-    title: "Картина 02",
+    title: "Творба 02",
     art: "bg-[linear-gradient(155deg,#f7ead0_0%,#c98b48_48%,#6c5539_100%)]",
   },
   {
-    title: "Картина 03",
+    title: "Творба 03",
     art: "bg-[linear-gradient(135deg,#8a924c_0%,#d9ba48_46%,#f5e5a5_100%)]",
   },
 ];
@@ -67,6 +83,7 @@ const designConcepts = [
 export default function Home() {
   return (
     <>
+      <StructuredData data={serviceStructuredData} />
       <section className="relative overflow-hidden bg-[#fffaf0] py-24 max-[820px]:py-16 max-[620px]:py-12">
         <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-[#f3c94d]/20 blur-3xl" />
         <div className="mx-auto grid w-[min(1180px,calc(100%_-_40px))] grid-cols-[1.08fr_.92fr] items-center gap-[72px] max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[620px]:w-[min(1180px,calc(100%_-_28px))]">
@@ -84,8 +101,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_42%,#5d4325_0_10%,#8b682d_10%_18%,#e7b936_18%_36%,transparent_36%),radial-gradient(ellipse_at_56%_52%,rgba(101,118,57,.92)_0_10%,transparent_11%),linear-gradient(145deg,#fff3c4_0%,#edc24e_48%,#7d8949_100%)]" />
               <div className="absolute left-[8%] top-[14%] h-[70%] w-[84%] rounded-[50%] border border-white/40" />
               <div className="absolute bottom-0 left-0 right-0 bg-white/88 px-6 py-5 backdrop-blur-sm">
-                <span className="block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9b7b31]">Featured work</span>
-                <strong className="mt-1 block font-serif text-xl font-semibold text-[#302b23]">Плейсхолдър за картина</strong>
+                <span className="block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9b7b31]">Избрана творба</span>
+                <strong className="mt-1 block font-serif text-xl font-semibold text-[#302b23]">Авторска картина</strong>
               </div>
             </div>
           </div>
@@ -97,18 +114,18 @@ export default function Home() {
           <div className="mb-10 max-w-[760px]">
             <span className="mb-[18px] inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-[#8a6a25]">Избрани творби</span>
             <h2 className="mb-[18px] font-serif text-[clamp(38px,4.6vw,60px)] leading-none tracking-[-0.03em] text-[#2d2a22]">Галерия</h2>
-            <p className="text-[17px] leading-[1.7] text-[#756d61] max-[620px]:text-base">Временни визуални плейсхолдъри, които могат директно да бъдат заменени с реалните картини.</p>
+            <p className="text-[17px] leading-[1.7] text-[#756d61] max-[620px]:text-base">Подбрана селекция от авторски творби, представени с фокус върху цвят, композиция и характер.</p>
           </div>
           <div className="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
             {works.map((work, index) => (
               <article key={work.title} className="group">
-                <div className={`relative aspect-[4/5] overflow-hidden rounded-[18px] border border-[#e1d5c4] ${work.art}`} aria-label={`Плейсхолдър ${work.title}`}>
+                <div className={`relative aspect-[4/5] overflow-hidden rounded-[18px] border border-[#e1d5c4] ${work.art}`} aria-label={work.title}>
                   <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[11px] font-bold tracking-[0.12em] text-[#6c604c]">0{index + 1}</span>
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
                 <div className="pt-4">
                   <h3 className="mb-1 font-serif text-[24px] font-semibold text-[#302b23]">{work.title}</h3>
-                  <span className="text-sm text-[#8a8174]">Авторска творба · плейсхолдър</span>
+                  <span className="text-sm text-[#8a8174]">Авторска творба</span>
                 </div>
               </article>
             ))}
@@ -141,7 +158,7 @@ export default function Home() {
                 <div className="p-5">
                   <h3 className="font-serif text-[24px] font-semibold text-[#302b23]">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-[#82786b]">{item.label}</p>
-                  <span className="mt-5 inline-flex rounded-full border border-[#ddd0b9] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#876625]">Място за готов дизайн</span>
+                  <span className="mt-5 inline-flex rounded-full border border-[#ddd0b9] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#876625]">Дизайн услуга</span>
                 </div>
               </article>
             ))}
