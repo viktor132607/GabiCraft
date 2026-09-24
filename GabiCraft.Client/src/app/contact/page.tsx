@@ -1,11 +1,4 @@
 import type { Metadata } from "next";
-export default function ContactPage() {
-  const rows = [
-    ["Email", "Предстои добавяне"],
-    ["Instagram", "Предстои добавяне"],
-    ["Поръчки", "Предстои добавяне"],
-  ];
-
 
 export const metadata: Metadata = {
   title: "Контакти и запитвания",
@@ -14,6 +7,14 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
 };
+
+export default function ContactPage() {
+  const rows = [
+    ["Email", "Предстои добавяне"],
+    ["Instagram", "Предстои добавяне"],
+    ["Поръчки", "Предстои добавяне"],
+  ];
+
   return (
     <section className="min-h-[68vh] bg-[#fffdf7] py-[92px] pt-[104px] max-[820px]:min-h-0 max-[820px]:pt-[76px] max-[620px]:py-[54px]">
       <div className="mx-auto w-[min(820px,calc(100%_-_40px))] max-[620px]:w-[min(820px,calc(100%_-_28px))]">
