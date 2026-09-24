@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { projectThemes } from "@/lib/projectThemes";
 
 export const dynamic = "force-static";
 
@@ -26,5 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    ...projectThemes.map((theme) => ({
+      url: `${siteUrl}/project/${theme.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
   ];
 }
