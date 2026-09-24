@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 const works = [
   ["Картина 01", "bg-[linear-gradient(145deg,#f4d365_0%,#f0ad3a_45%,#6f7b43_100%)]"],
   ["Картина 02", "bg-[linear-gradient(155deg,#f7ead0_0%,#c98b48_48%,#6c5539_100%)]"],
@@ -7,6 +8,14 @@ const works = [
   ["Картина 06", "bg-[linear-gradient(150deg,#f8eee0_0%,#d4a94f_42%,#98703b_100%)]"],
 ];
 
+
+export const metadata: Metadata = {
+  title: "Галерия с авторски картини",
+  description: "Разгледайте галерията на GabiCraft с подбрани авторски картини и арт творби в топла, естествена визуална стилистика.",
+  alternates: {
+    canonical: "/project",
+  },
+};
 export default function ProjectPage() {
   return (
     <section className="min-h-[68vh] bg-[#fffdf7] py-[92px] pt-[104px] max-[820px]:min-h-0 max-[820px]:pt-[76px] max-[620px]:py-[54px]">
