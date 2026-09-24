@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20.19.0
 
@@ -37,7 +37,7 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Lint
-        run: npm run lint
+        run: npm run lint -- --max-warnings=0
 
       - name: Type check
         run: npm run typecheck
@@ -64,6 +64,21 @@ jobs:
           grep -q 'rel="canonical"' out/about.html
           grep -q 'rel="canonical"' out/project.html
           grep -q 'rel="canonical"' out/contact.html
+          for slug in \
+            topla-zhivopis \
+            estestveni-formi \
+            tsvyat-i-svetlina \
+            zemna-palitra \
+            avtorski-serii \
+            dekorativni-kompozitsii
+          do
+            test -f "out/project/${slug}.html"
+            grep -q "https://gabicraft.onrender.com/project/${slug}" out/sitemap.xml
+            grep -q 'rel="canonical"' "out/project/${slug}.html"
+            grep -q 'property="og:image"' "out/project/${slug}.html"
+            grep -q 'application/ld+json' "out/project/${slug}.html"
+            grep -q 'BreadcrumbList' "out/project/${slug}.html"
+          done
 
   server:
     name: Server
@@ -74,7 +89,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
