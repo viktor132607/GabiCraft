@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 export default function AboutPage() {
   const rows = [
     ["Стил", "Топли земни цветове, слънчогледови акценти и естествена, спокойна композиция."],
@@ -5,6 +6,14 @@ export default function AboutPage() {
     ["Галерия", "Текущите плейсхолдъри са подготвени за директна замяна с реални изображения на картините."],
   ];
 
+
+export const metadata: Metadata = {
+  title: "За автора",
+  description: "Научете повече за GabiCraft, творческия подход, стила и фокуса върху оригинални картини, авторски серии и визуални проекти.",
+  alternates: {
+    canonical: "/about",
+  },
+};
   return (
     <section className="min-h-[68vh] bg-[#fffdf7] py-[92px] pt-[104px] max-[820px]:min-h-0 max-[820px]:pt-[76px] max-[620px]:py-[54px]">
       <div className="mx-auto w-[min(820px,calc(100%_-_40px))] max-[620px]:w-[min(820px,calc(100%_-_28px))]">
