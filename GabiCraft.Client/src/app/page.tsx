@@ -8,6 +8,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    type: "website",
+    locale: "bg_BG",
+    url: "/",
+    siteName: "GabiCraft",
+    title: "Авторски картини и дизайн услуги | GabiCraft",
+    description: "GabiCraft представя авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GabiCraft — арт портфолио и дизайн услуги",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Авторски картини и дизайн услуги | GabiCraft",
+    description: "GabiCraft представя авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+    images: ["/og-image.png"],
+  },
 };
 const works = [
   {
