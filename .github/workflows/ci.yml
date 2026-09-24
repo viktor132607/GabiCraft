@@ -28,6 +28,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Generate temporary artwork previews
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          from io import BytesIO
+          import base64
+
+          for path in sorted(Path("public").glob("*.jfif")):
+              with Image.open(path) as image:
+                  image = image.convert("RGB")
+                  image.thumbnail((220, 220))
+                  buffer = BytesIO()
+                  image.save(buffer, format="JPEG", quality=60, optimize=True)
+                  encoded = base64.b64encode(buffer.getvalue()).decode("ascii")
+                  print(f"ART_PREVIEW::{path.name}::{encoded}")
+          PY
+
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
