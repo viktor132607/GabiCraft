@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
+import { projectThemes } from "@/lib/projectThemes";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gabicraft.onrender.com";
 
 const collectionStructuredData = {
@@ -13,39 +15,6 @@ const collectionStructuredData = {
     "@id": `${siteUrl}/#website`,
   },
 };
-
-const works = [
-  {
-    title: "Топла живопис",
-    description: "Авторски композиции в жълто, охра и земни тонове с акцент върху светлината.",
-    art: "bg-[linear-gradient(145deg,#f4d365_0%,#f0ad3a_45%,#6f7b43_100%)]",
-  },
-  {
-    title: "Естествени форми",
-    description: "Меки линии и органични форми, вдъхновени от природни цветове и текстури.",
-    art: "bg-[linear-gradient(155deg,#f7ead0_0%,#c98b48_48%,#6c5539_100%)]",
-  },
-  {
-    title: "Цвят и светлина",
-    description: "Контраст между наситени акценти и спокойни светли полета в балансирана композиция.",
-    art: "bg-[linear-gradient(135deg,#8a924c_0%,#d9ba48_46%,#f5e5a5_100%)]",
-  },
-  {
-    title: "Земна палитра",
-    description: "Топли кафяви, кремави и маслинени нюанси с естествено и спокойно усещане.",
-    art: "bg-[linear-gradient(145deg,#f8df91_0%,#c56d45_48%,#754f3a_100%)]",
-  },
-  {
-    title: "Авторски серии",
-    description: "Последователни визуални идеи, развивани през няколко свързани творби.",
-    art: "bg-[linear-gradient(135deg,#d9c27e_0%,#74804d_50%,#384332_100%)]",
-  },
-  {
-    title: "Декоративни композиции",
-    description: "Работи, създадени да носят характер и завършен визуален акцент в пространството.",
-    art: "bg-[linear-gradient(150deg,#f8eee0_0%,#d4a94f_42%,#98703b_100%)]",
-  },
-];
 
 
 export const metadata: Metadata = {
@@ -90,7 +59,7 @@ export default function ProjectPage() {
         </div>
 
         <div className="grid grid-cols-3 gap-x-6 gap-y-10 max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
-          {works.map((work, index) => (
+          {projectThemes.map((work, index) => (
             <article key={work.title}>
               <div role="img" aria-label={`${work.title} — визуална посока в портфолиото`} className={`relative aspect-[4/5] overflow-hidden rounded-[18px] border border-[#e1d5c4] ${work.art}`}>
                 <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[11px] font-bold tracking-[0.12em] text-[#6c604c]">0{index + 1}</span>
@@ -99,6 +68,13 @@ export default function ProjectPage() {
               <div className="pt-4">
                 <h2 className="mb-1 font-serif text-[24px] font-semibold text-[#302b23]">{work.title}</h2>
                 <p className="text-sm leading-6 text-[#8a8174]">{work.description}</p>
+                <Link
+                  className="mt-4 inline-block border-b border-[#b58935] pb-1 text-sm font-semibold text-[#765920]"
+                  href={`/project/${work.slug}`}
+                  aria-label={`Виж повече за ${work.title}`}
+                >
+                  Виж направлението →
+                </Link>
               </div>
             </article>
           ))}
