@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 export default function ContactPage() {
   const rows = [
     ["Email", "Предстои добавяне"],
@@ -5,6 +6,14 @@ export default function ContactPage() {
     ["Поръчки", "Предстои добавяне"],
   ];
 
+
+export const metadata: Metadata = {
+  title: "Контакти и запитвания",
+  description: "Свържете се с GabiCraft за запитвания относно авторски картини, поръчки, арт проекти, бранд идентичност и уеб визия.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
   return (
     <section className="min-h-[68vh] bg-[#fffdf7] py-[92px] pt-[104px] max-[820px]:min-h-0 max-[820px]:pt-[76px] max-[620px]:py-[54px]">
       <div className="mx-auto w-[min(820px,calc(100%_-_40px))] max-[620px]:w-[min(820px,calc(100%_-_28px))]">
