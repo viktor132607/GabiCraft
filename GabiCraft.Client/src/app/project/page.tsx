@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/project",
   },
+  openGraph: {
+    type: "website",
+    locale: "bg_BG",
+    url: "/project",
+    siteName: "GabiCraft",
+    title: "Галерия с авторски картини | GabiCraft",
+    description: "Разгледайте галерията на GabiCraft с подбрани авторски картини и арт творби в топла, естествена визуална стилистика.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GabiCraft — арт портфолио и дизайн услуги",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Галерия с авторски картини | GabiCraft",
+    description: "Разгледайте галерията на GabiCraft с подбрани авторски картини и арт творби в топла, естествена визуална стилистика.",
+    images: ["/og-image.png"],
+  },
 };
 export default function ProjectPage() {
   return (
