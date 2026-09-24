@@ -38,8 +38,9 @@ export default function Navbar() {
 
         <button
           type="button"
-          aria-label="Отвори меню"
+          aria-label={open ? "Затвори меню" : "Отвори меню"}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen((value) => !value)}
           className="hidden h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border border-[#ddd2bf] bg-white max-[820px]:flex"
         >
@@ -49,7 +50,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="hidden border-t border-[#ebe3d5] bg-[#fffdf7] px-5 py-3 max-[820px]:grid" aria-label="Мобилна навигация">
+        <nav id="mobile-navigation" className="hidden border-t border-[#ebe3d5] bg-[#fffdf7] px-5 py-3 max-[820px]:grid" aria-label="Мобилна навигация">
           {navItems.map((item) => (
             <Link
               key={item.href}
