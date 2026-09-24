@@ -28,25 +28,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Generate temporary image previews
-        run: |
-          python3 -m pip install --quiet pillow
-          python3 - <<'PY'
-          from pathlib import Path
-          from PIL import Image
-          from io import BytesIO
-          import base64
-
-          for path in sorted(Path("public").glob("ChatGPT Image*.png")):
-              with Image.open(path) as image:
-                  image = image.convert("RGB")
-                  image.thumbnail((180, 180))
-                  buffer = BytesIO()
-                  image.save(buffer, format="JPEG", quality=55, optimize=True)
-                  encoded = base64.b64encode(buffer.getvalue()).decode("ascii")
-                  print(f"IMAGE_PREVIEW::{path.name}::{encoded}")
-          PY
-
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
