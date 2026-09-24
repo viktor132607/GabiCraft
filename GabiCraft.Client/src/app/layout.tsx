@@ -3,9 +3,53 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gabicraft.onrender.com";
+
 export const metadata: Metadata = {
-  title: "GabiCraft | Art Portfolio",
-  description: "GabiCraft — арт портфолио за картини и авторски творби.",
+  metadataBase: new URL(siteUrl),
+  applicationName: "GabiCraft",
+  title: {
+    default: "GabiCraft | Арт портфолио и дизайн услуги",
+    template: "%s | GabiCraft",
+  },
+  description:
+    "GabiCraft представя авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+  keywords: [
+    "GabiCraft",
+    "картини",
+    "авторски картини",
+    "арт портфолио",
+    "изкуство",
+    "бранд идентичност",
+    "уеб дизайн",
+    "визуална концепция",
+    "дизайн услуги",
+  ],
+  authors: [{ name: "GabiCraft" }],
+  creator: "GabiCraft",
+  publisher: "GabiCraft",
+  category: "art",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "bg_BG",
+    url: "/",
+    siteName: "GabiCraft",
+    title: "GabiCraft | Арт портфолио и дизайн услуги",
+    description:
+      "Авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GabiCraft | Арт портфолио и дизайн услуги",
+    description:
+      "Авторски картини, арт проекти и услуги за бранд идентичност, уеб визия и цялостна визуална концепция.",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
