@@ -47,6 +47,20 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://gabicraft.onrender.com
 
+      - name: Verify SEO output
+        run: |
+          test -f out/robots.txt
+          test -f out/sitemap.xml
+          test -f out/og-image.png
+          grep -q "sitemap.xml" out/robots.txt
+          grep -q "https://gabicraft.onrender.com/project" out/sitemap.xml
+          grep -q 'rel="canonical"' out/index.html
+          grep -q 'property="og:image"' out/index.html
+          grep -q 'application/ld+json' out/index.html
+          grep -q 'rel="canonical"' out/about.html
+          grep -q 'rel="canonical"' out/project.html
+          grep -q 'rel="canonical"' out/contact.html
+
   server:
     name: Server
     runs-on: ubuntu-latest
